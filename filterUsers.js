@@ -46,9 +46,7 @@ const users = [
 // function which filter users who has  scoresGreaterThan85,  
   function scoresGreaterThan(users,score){
 
-      users.forEach((value,index,users)=>{
-        if(value.scores>score)
-        console.log(users[index])
-      })    
+     let list=users.filter(users=>users.scores>score)
+	 return list
   }
-  scoresGreaterThan(users,85) //score=85
+  console.log(scoresGreaterThan(users,85)) //score=85
