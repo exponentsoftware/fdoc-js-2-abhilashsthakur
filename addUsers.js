@@ -45,7 +45,7 @@ var users = [
 // Function to addUser
 function addUser(users, newUser) {
 
-	var a = users.every(value => Object.is(value.name, newUser.name))
+	var a = users.every(value => Object.is(value.name, newUser.name)) //Comparing two objects property name
 	
 	if (!a) {
 		users.push(newUser);
