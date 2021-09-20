@@ -1,64 +1,64 @@
 var users = [
 	{
-		name:'Brook', 
-		scores:75,
-		skills:['HTM', 'CSS', 'JS'],
-		age:16
+		name: 'Brook',
+		scores: 75,
+		skills: ['HTM', 'CSS', 'JS'],
+		age: 16
 	},
 	{
-		name:'Alex', 
-		scores:80,
-		skills:['HTM', 'CSS', 'JS'],
-		age:18
-	}, 
-	{
-		name:'David', 
-		scores:75,
-		skills:['HTM', 'CSS'],
-		age:22
-	}, 
-	{
-		name:'John', 
-		scores:85,
-		skills:['HTM'],
-		age:25
+		name: 'Alex',
+		scores: 80,
+		skills: ['HTM', 'CSS', 'JS'],
+		age: 18
 	},
 	{
-		name:'Sara',
-		scores:95,
-		skills:['HTM', 'CSS', 'JS'],
+		name: 'David',
+		scores: 75,
+		skills: ['HTM', 'CSS'],
+		age: 22
+	},
+	{
+		name: 'Sara',
+		scores: 95,
+		skills: ['HTM', 'CSS', 'JS'],
 		age: 26
 	},
 	{
-		name:'Martha', 
-		scores:80,
-		skills:['HTM', 'CSS', 'JS'],
-		age:18
+		name: 'Martha',
+		scores: 80,
+		skills: ['HTM', 'CSS', 'JS'],
+		age: 18
 	},
 	{
-		name:'Thomas',
-		scores:90,
-		skills:['HTM', 'CSS', 'JS'],
-		age:20
+		name: 'Thomas',
+		scores: 90,
+		skills: ['HTM', 'CSS', 'JS'],
+		age: 20
+	},
+	{
+		name: 'John',
+		scores: 85,
+		skills: ['HTM'],
+		age: 25
 	}
-	]
+]
 // Function to addUser
-	function addUser(){
-		for(let i=0;i<users.length;i++){
+function addUser(users, newUser) {
 
-			if(JSON.stringify(users[i])===JSON.stringify(newUser)){
-				return 'user exist'
-			}
-			else{
-				users.push(newUser)
-				return users
-			}
-		}
+	var a = users.every(value => Object.is(value.name, newUser.name))
+	
+	if (!a) {
+		users.push(newUser);
+		return users;
 	}
-	newUser={
-		name:'Brook', 
-		scores:75,
-		skills:['HTM', 'CSS', 'JS'],
-		age:16
+	else {
+		return 'user Exist'
 	}
-	console.log(addUser(users,newUser))
+}
+newUser = {
+	name: 'Jon',
+	scores: 85,
+	skills: ['HTM'],
+	age: 25
+}
+console.log(addUser(users, newUser));
