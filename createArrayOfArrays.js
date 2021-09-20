@@ -7,27 +7,9 @@ const countries = ['ALBANIA','BOLIVIA','CANADA',
                    'JAPAN','KENYA'
                 ]
 
-  function createArrayOfArrays(){
-      
-    var country=[]
+  function createArrayOfArrays(countries){
     
-    var len;
-
-
-    for(let i=0;i<countries.length;i++){
-    
-      // getting First three letter 
-        countryPart=countries[i].toString().slice(0,3)
-        
-        // getting the length of the name
-        
-        len=countries[i].length;
-
-        country=[...country,[countries[i] , countryPart, len]]
-
-    }
-    
-    return country
-    
+   let x= countries.map(country=>[country.substr(0,3) , country.length, country])
+    return x
   }
-  console.log(createArrayOfArrays(countries))
+  console.log(createArrayOfArrays(countries));
